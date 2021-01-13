@@ -1,0 +1,67 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Pokémon API example",
+        "description": "REST API to MongoDB through Fastify",
+        "contact": {
+          "name": "API Support",
+          "url": "https://www.jemsiaf.net/support",
+          "email": "support@jemsiaf.net"  
+        },
+        "version": "1.0.0"
+    },
+    "host": "localhost:3000",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "definitions": {},
+    "externalDocs": {
+        "url": "https://swagger.io",
+        "description": "Swagger detailed information"
+    },
+    "paths": {
+        "/api/gyms": {
+            "get": {
+                "description": "Returns all gyms that the user has access to",
+                "responses": {
+                    "200": {
+                        "description": "All gyms."
+                    }
+                }
+            }
+        },
+        "/api/gyms/{id}": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Single gym."
+                    }
+                }
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "in": "path",
+                    "description": "ID of gym to use",
+                    "required": true
+                }
+            ]
+        },
+        "/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Default Response"
+                    }
+                }
+            }
+        }
+    }
+}

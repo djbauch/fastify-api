@@ -1,7 +1,7 @@
 {
   "name": "fastify-api",
   "version": "1.0.0",
-  "description": "OpenAPI REST for Pokemon",
+  "description": "OpenAPI REST for Pokémon",
   "main": "index.js",
   "scripts": {
     "start": "node ./node_modules/nodemon/bin/nodemon.js ./src/index.js",

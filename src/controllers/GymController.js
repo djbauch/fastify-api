@@ -1,8 +1,6 @@
 const boom = require('boom')
 const Gym = require('../models/Gym')
 
-const Gymn = require('../models/Gym')
-
 // Get all gyms
 exports.getGyms = async(req, reply) => {
     try {
@@ -14,7 +12,7 @@ exports.getGyms = async(req, reply) => {
 }
 
 // Get a single gym by ID
-exports.getsingleGym = async(req, reply) => {
+exports.getSingleGym = async(req, reply) => {
     try {
         const id = req.params.id
         const gym = await Gym.findById(id)

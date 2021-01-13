@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const gymSchema = new mongoose.Schema({
+const guildSchema = new mongoose.Schema({
     name: String,
     encyclopedia_number: String,
     suffix: String,
@@ -8,4 +8,4 @@ const gymSchema = new mongoose.Schema({
     coordinate: String
 })
 
-module.exports = mongoose.model('Gym', gymSchema)
+module.exports = mongoose.model('Guild', guildSchema)

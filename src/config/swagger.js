@@ -3,7 +3,7 @@ exports.options = {
     exposeRoute: true,
     swagger: {
         info: {
-            title: 'Fastify API example',
+            title: 'Fastify Pokémon  API example',
             description: 'REST API to MongoDB through Fastify',
             version: '1.0.0'
         },
@@ -14,6 +14,14 @@ exports.options = {
         host: 'localhost:3000',
         schemes: ['http'],
         consumes: ['application/json'],
-        produces: ['application/json']
+        produces: ['application/json'],
+        tags: [
+            { name: 'Gym', description: 'Gym related endpoints'},
+            { name: 'Guild', description: 'Guild related endpoints'},
+            { name: 'Pokémon', description: 'Pokémon related endpoints'}
+        ],
+        definitions: {
+
+        }
     }
 }
