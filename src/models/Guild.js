@@ -2,10 +2,13 @@ const mongoose = require('mongoose')
 
 const guildSchema = new mongoose.Schema({
     name: String,
-    encyclopedia_number: String,
-    suffix: String,
-    category: Number,
-    coordinate: String
+    identifier: String,
+    operational_status: String,
+    condition: String,
+    location_reason: String,
+    location_name: String,
+    latitude: Number,
+    longitude: Number,
 })
 
 module.exports = mongoose.model('Guild', guildSchema)

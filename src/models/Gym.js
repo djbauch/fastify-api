@@ -5,7 +5,9 @@ const gymSchema = new mongoose.Schema({
     encyclopedia_number: String,
     suffix: String,
     category: Number,
-    coordinate: String
+    coordinate: String,
+    latitude: Number,
+    longitude: Number
 })
 
 module.exports = mongoose.model('Gym', gymSchema)

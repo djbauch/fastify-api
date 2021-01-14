@@ -12,13 +12,14 @@ exports.options = {
             description: 'Swagger detailed information'
         },
         host: 'localhost:3000',
-        schemes: ['http'],
+        schemes: ['http', 'https'],
         consumes: ['application/json'],
         produces: ['application/json'],
         tags: [
-            { name: 'Gym', description: 'Gym related endpoints'},
             { name: 'Guild', description: 'Guild related endpoints'},
-            { name: 'Pokémon', description: 'Pokémon related endpoints'}
+            { name: 'Gym', description: 'Gym related endpoints'},
+            { name: 'Pokémon', description: 'Pokémon related endpoints'},
+            { name: 'Relationship', description: 'Relationship in the object model'},
         ],
         definitions: {
 

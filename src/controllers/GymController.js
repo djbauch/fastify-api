@@ -11,11 +11,11 @@ exports.getGyms = async(req, reply) => {
     }
 }
 
-// Get a single gym by ID
+// Get a single gym by Encyclopedia Number
 exports.getSingleGym = async(req, reply) => {
     try {
         const id = req.params.id
-        const gym = await Gym.findById(id)
+        const gym = await Gym.findOne({ Encyclopedia_Number: id})
         return gym
     } catch (err) {
         throw boom.boomify(err)
