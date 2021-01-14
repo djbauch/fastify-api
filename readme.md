@@ -4,7 +4,7 @@
 ## Build Setup
 Prior to starting the program, you will need a .env file in the project root directory containing the connection string to the MongoDB server containing the data. The connection string is of the form
 
-MONGODB_URI = 'mongodb+srv://[USER-ID]:[PASSWORD]@jemsiafdevcluster.us6p3.mongodb.net/Pokemon?retryWrites=true&w=majority'
+MONGODB_URI = 'mongodb+srv://[USER-ID]:[PASSWORD]@[CLUSTERNAME].us6p3.mongodb.net/Pokemon?retryWrites=true&w=majority'
 
 ```bash
 # install dependencies
