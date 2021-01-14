@@ -14,8 +14,8 @@ exports.getGuilds = async(req, reply) => {
 // Get a single guild by Identifier
 exports.getSingleGuild = async(req, reply) => {
     try {
-        const id = req.params.id
-        const guild = await Guild.findOne({ IDentifier: id})
+        const id = req.params.identifier
+        const guild = await Guild.findOne({ Identifier: id})
         return guild
     } catch (err) {
         throw boom.boomify(err)

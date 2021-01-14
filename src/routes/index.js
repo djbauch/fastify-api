@@ -1,5 +1,6 @@
 const gymController = require('../controllers/GymController')
 const guildController = require('../controllers/GuildController')
+const pokémonController = require('../controllers/PokémonController')
 
 const routes = [
     {
@@ -143,6 +144,61 @@ const routes = [
         handler: guildController.getGuildByName
     },
     // Pokémon-related routes
+    {
+        method: 'GET',
+        url: '/api/pokemons',
+        schema: {
+            tags: ['Pokémon'],
+        },
+        handler: pokémonController.getPokémons
+    },
+    {
+        method: 'GET',
+        url: '/api/pokemons/:code',
+        schema: {
+            tags: ['Pokémon'],
+            params: {
+               code: {
+                    type: 'string',
+                    description: 'Nomenclature for the pokémon of interest'
+                }
+            },
+            response: {
+                200: {
+                    type: 'object',
+                    properties: {
+                        _id: { type: 'string' },
+                        Nomenclature: { type: 'string' },
+                        Code: { type: 'string' },
+                        Latitude: {type: 'number'},
+                        Longitude: {type: 'number'}
+                    },
+                    example: {
+                        _id: '5ffcb82307ef4e45f29b9ae4',
+                        'Nomenclature': 'Qwilfish',
+                        'Code': 'DR0EM',
+                        'Latitude': 29.3934607360084,
+                        'Longitude': -98.6311983994515
+                    }
+                }
+            }
+        },
+        handler: pokémonController.getSinglePokémon
+    },
+    {
+        method: 'GET',
+        url: '/api/pokemonByName/:nomenclature',
+        schema: {
+            tags: ['Pokémon'],
+            params: {
+                nomenclature: {
+                    type: 'string',
+                    description: 'Nomenclature of the pokémon record to return'
+                }
+            }
+        },
+        handler: pokémonController.getPokémonByNomenclature
+    },
 ]
 
 module.exports = routes

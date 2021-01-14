@@ -11,22 +11,22 @@ exports.getPokémons = async(req, reply) => {
     }
 }
 
-// Get a single pokémon by Encyclopedia Number
+// Get a single pokémon by Code
 exports.getSinglePokémon = async(req, reply) => {
     try {
-        const id = req.params.id
-        const pokémon = await Pokémon.findOne({ Encyclopedia_Number: id})
+        const id = req.params.code
+        const pokémon = await Pokémon.findOne({ Code: id})
         return pokémon
     } catch (err) {
         throw boom.boomify(err)
     }
 }
 
-exports.getPokémonByName = async(req, reply) => {
+exports.getPokémonByNomenclature = async(req, reply) => {
     try {
-        const name = req.params.name
+        const name = req.params.nomenclature
         const searchArg = {Name: name}
-        const pokémon = await Pokémon.findOne({ Name: name})
+        const pokémon = await Pokémon.findOne({ Nomenclature: name})
         return pokémon
     } catch (err) {
         throw boom.boomify(err)
